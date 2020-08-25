@@ -16,8 +16,9 @@
   (serve/servlet (start func/tf)
                  #:extra-files-paths (list htdocs)
                  #:safety-limits (make-unlimited-safety-limits)
+                 #:listen-ip #f
                  #:manager (make-threshold-LRU-manager 
-                            expiration-handler (* 128 1024 1024))
+                            expiration-handler (* 128 1024 1024 1024))
                  #:servlet-path (format "/~a.rkt" crunched)))
 
 
